@@ -1,0 +1,133 @@
+/* Reset default styles for consistency across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and container styling for centering and responsiveness */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Title styling */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+/* Status display area styling */
+#status {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #e7f3ff;
+    border: 2px solid #b3d9ff;
+    border-radius: 5px;
+    color: #333;
+}
+
+/* Board styling: 3x3 grid using Flexbox for responsiveness */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    margin: 20px auto;
+    width: 300px;
+    max-width: 90vw; /* Responsive: scales on smaller screens */
+}
+
+/* Individual cell styling */
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border: 3px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    user-select: none; /* Prevents text selection on click */
+}
+
+.cell:hover {
+    background-color: #f9f9f9;
+}
+
+.cell.x {
+    color: #e74c3c; /* Red for X */
+}
+
+.cell.o {
+    color: #3498db; /* Blue for O */
+}
+
+/* Disabled state for cells after game ends */
+.cell:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Reset button styling */
+#reset {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+#reset:hover {
+    background-color: #219a52;
+}
+
+/* Responsive design: Adjust for mobile devices */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    .board {
+        width: 250px;
+        grid-gap: 3px;
+    }
+    
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 2em;
+    }
+    
+    #status {
+        font-size: 1em;
+    }
+}
